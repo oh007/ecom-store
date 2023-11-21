@@ -4,11 +4,11 @@ import ProductShowCase from "./ProductShowCase";
 export default function MainContent() {
   return (
   <>
-    <main className="bg-customGreen p-14">
+    <main className="bg-customGreen p-10">
       <div className="text-center">
-        <h1 className="font-bold text-white">Moderna möbler till moderna hem</h1>
+        <h1 className="font-bold text-white text-4xl mb-3">Moderna möbler till moderna hem</h1>
 
-        <p className="font-light text-white">
+        <p className="font-light text-white text-lg">
           Vi garanterar alltid kvalitet och en stilren design till ditt hem. Med
           våran nya lyxiga kollektion IKEA+ med fokus på bekvämlighet och lyx
         </p>
