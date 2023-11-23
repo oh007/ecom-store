@@ -17,7 +17,7 @@ const HamburgerMenu = () => {
         className={`text-white focus:outline-none ${isOpen ? "hidden" : ""}`}
         onClick={toggleMenu}
       >
-        <FontAwesomeIcon icon={faBars} size="2xl" />
+        <FontAwesomeIcon icon={faBars} size="lg" />
       </button>
 
       <div
@@ -41,41 +41,41 @@ const HamburgerMenu = () => {
           <div className="mt-12">
             <ul className="list-none p-0 m-0 flex flex-col gap-5">
               <li>
-                <Link to="/">Home</Link>
+                <Link onClick={toggleMenu} to="/">Home</Link>
               </li>
               <li>
-                <Link to="/products">Products</Link>
+                <Link onClick={toggleMenu} to="/products">Products</Link>
               </li>
               <li>
-                <Link to="/about">About</Link>
+                <Link onClick={toggleMenu} to="/about">About</Link>
               </li>
               <li>
-                <Link to="/checkout">Checkout</Link>
+                <Link onClick={toggleMenu}   to="/checkout">Checkout</Link>
               </li>
             </ul>
           </div>
           <div className="sec-links mt-12">
             <ul className="list-none p-0 m-0 flex flex-col gap-4">
               <li>
-                <Link to="/kundservice">Kundservice</Link>
+               Kundservice
               </li>
               <li>
-                <Link to="/folj-min-order">Följ min order</Link>
+                Följ min order
               </li>
               <li>
-                <Link to="/vanliga-fragor">Vanliga frågor</Link>
+                Vanliga frågor
               </li>
               <li>
-                <Link to="/second-hand">Second hand</Link>
+             Second hand
               </li>
               <li>
-                <Link to="/ikea-restaurang">IKEA Restaurang och Bistro</Link>
+              IKEA Restaurang och Bistro
               </li>
               <li>
-                <Link to="/ikea-family">IKEA Family</Link>
+                IKEA Family
               </li>
               <li>
-                <Link to="/ikea-onskelista">IKEA Önskelista</Link>
+                IKEA Önskelista
               </li>
             </ul>
           </div>
