@@ -31,4 +31,24 @@ const data = [
       },
   ];
   
-  export default data;
+ 
+
+  const imageData= [
+    {
+      img: "src/assets/images/ExamplePic-1.jpg"
+    },
+    {
+      img: "src/assets/images/ExamplePic-2.jpg"
+    },
+    {
+      img: "src/assets/images/ExamplePic-3.jpg"
+    },
+    {
+      img: "src/assets/images/ExamplePic-4.jpg"
+    },
+    {
+      img: "src/assets/images/ExamplePic-5.jpg"
+    },
+  ]
+
+  export { data ,imageData};

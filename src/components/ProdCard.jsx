@@ -1,4 +1,4 @@
-import data from "/src/data/data.js";
+import { data } from "/src/data/data"
 
 console.log(data, "datan");
 export default function ProdCard() {

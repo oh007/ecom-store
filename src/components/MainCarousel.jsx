@@ -1,8 +1,9 @@
 import Slider from 'react-animated-slider';
 import 'react-animated-slider/build/horizontal.css';
-import data from "/src/data/data.js"
+import { imageData} from "/src/data/data.js"
+import { Link } from "react-router-dom";
 
-console.log(data,"datan")
+console.log(imageData,"datan")
 export default function MainCarousel() {
   return (
     <>
@@ -12,7 +13,7 @@ export default function MainCarousel() {
   
   
 <Slider autoplay={3000}>
-{data.map((data, index) => (
+{imageData.map((data, index) => (
         <img key={index} src={data.img} alt={`Bild ${index + 1}`} />
       ))}
 </Slider>
@@ -24,7 +25,13 @@ på dom mest exlusiva materailen
 man kan få tag på. 
 
 Läs mer om IKEA+</p>
-<button className='bg-black hover:bg-gray-500 text-white font-bold py-2 px-4 rounded-full'>Utforska IKEA+</button>
+
+<Link
+            to="/products"
+            className="bg-transparent hover:bg-black text-white font-light hover:text-white py-2 px-4 border border-white hover:border-transparent rounded"
+          >
+            Utforska IKEA+
+          </Link>
 </div>
     </>
   )
