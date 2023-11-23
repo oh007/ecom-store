@@ -1,6 +1,6 @@
 import MainCarousel from "./MainCarousel";
 import ProductShowCase from "./ProductShowCase";
-
+import { Link } from "react-router-dom";
 export default function MainContent() {
   return (
   <>
@@ -14,8 +14,19 @@ export default function MainContent() {
         </p>
       </div>
       <div className="flex justify-center gap-16 m-9">
-        <button className="bg-ctaButton hover:bg-yellow-500 text-black font-light py-2 px-4 border border-black rounded">Till butiken</button>
-        <button className="bg-transparent hover:bg-black text-white font-light hover:text-white py-2 px-4 border border-white hover:border-transparent rounded">Utforska IKEA+</button>
+      <Link
+            to="/products"
+            className="bg-ctaButton hover:bg-yellow-500 text-black font-light py-2 px-4 border border-black rounded"
+          >
+            Till butiken
+          </Link>
+        <Link
+            to="/about"
+            className="bg-transparent hover:bg-black text-white font-light hover:text-white py-2 px-4 border border-white hover:border-transparent rounded"
+          >
+          
+            Utforska IKEA+
+          </Link>
       </div>
     </main>
     <section className="flex flex-col">
