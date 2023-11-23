@@ -3,39 +3,36 @@ import ProductShowCase from "./ProductShowCase";
 import { Link } from "react-router-dom";
 export default function MainContent() {
   return (
-  <>
-    <main className="bg-customGreen p-10">
-      <div className="text-center">
-        <h1 className="font-bold text-white text-4xl mb-3">Moderna möbler till moderna hem</h1>
+    <>
+      <main className="bg-customGreen p-10">
+        <div className="text-center">
+          <h1 className="font-bold text-white text-4xl mb-3">
+            Moderna möbler till moderna hem
+          </h1>
 
-        <p className="font-light text-white text-lg">
-          Vi garanterar alltid kvalitet och en stilren design till ditt hem. Med
-          våran nya lyxiga kollektion IKEA+ med fokus på bekvämlighet och lyx
-        </p>
-      </div>
-      <div className="flex justify-center gap-16 m-9">
-      <Link
-            to="/products"
-            className="bg-ctaButton hover:bg-yellow-500 text-black font-light py-2 px-4 border border-black rounded"
-          >
-            Till butiken
-          </Link>
-        <Link
-            to="/about"
-            className="bg-transparent hover:bg-black text-white font-light hover:text-white py-2 px-4 border border-white hover:border-transparent rounded"
-          >
-          
-            Utforska IKEA+
-          </Link>
-      </div>
-    </main>
-    <section className="flex flex-col">
-         <MainCarousel/>
-    </section>
-    <section className="">
+          <p className="font-light text-white text-lg">
+            Vi garanterar alltid kvalitet och en stilren design till ditt hem.
+            Med våran nya lyxiga kollektion IKEA+ med fokus på bekvämlighet och
+            lyx
+          </p>
+        </div>
+        <div className="flex justify-center gap-16 mt-8">
+          <button className="bg-ctaButton hover:bg-yellow-500 font-semibold  text-black border border-black rounded w-64 h-16 p-3">
+            {" "}
+            <Link to="/products" className="text-sm">Till butiken</Link>
+          </button>
+          <button className="bg-transparent hover:bg-black font-semibold text-white hover:text-white  border border-white hover:border-transparent rounded w-64 h-16 p-3">
+            <Link to="/about" className="text-sm">Utforska IKEA+</Link>
+          </button>
+        </div>
+      </main>
+      <section className="flex flex-col">
+        <MainCarousel />
+      </section>
+      <section className="">
         <h6 className="font-bold text-center">Utvalda produkter</h6>
-        <ProductShowCase/>
-    </section>
+        <ProductShowCase />
+      </section>
     </>
   );
 }
