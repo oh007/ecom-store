@@ -1,7 +1,9 @@
+/* eslint-disable react/prop-types */
 import MainCarousel from "./MainCarousel";
-import ProductShowCase from "./ProductShowCase";
+import ProdCard from "./ProdCard";
 import { Link } from "react-router-dom";
-export default function MainContent() {
+export default function MainContent(props) {
+  console.log(props.addToCart,"Add2Cart")
   return (
     <>
       <main className="bg-customGreen p-10">
@@ -31,8 +33,9 @@ export default function MainContent() {
       </section>
       <section className="">
         <h6 className="font-bold text-center">Utvalda produkter</h6>
-        <ProductShowCase />
+        <ProdCard addToCart={props.addToCart}/>
       </section>
     </>
   );
 }
+

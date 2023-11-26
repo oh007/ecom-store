@@ -1,9 +1,13 @@
-import MainContent from "./components/MainContent";
+/* eslint-disable react/prop-types */
 
-const Home = () => {
+import MainContent from './components/MainContent';
+
+
+const Home = (props) => {
+ 
   return (
     <>
-    <MainContent/>
+      <MainContent addToCart={props.addToCart} />
     </>
   );
 };

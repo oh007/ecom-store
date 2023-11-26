@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import { data } from "/src/data/data"
 
-console.log(data, "datan");
-export default function ProdCard() {
+export default function ProdCard(props) {
+  console.log(data)
   return (
     <div className="flex flex-wrap justify-center mt-16">
       {data.map((data, index) => (
@@ -33,10 +34,11 @@ export default function ProdCard() {
             <p className="text-bold">{data.price + " sek"}</p>
             <button
               value="button"
+              onClick={() => props.addToCart(data)}
               className="bg-prodButton hover:bg-gray-500 text-white font-bold py-2 px-4 rounded-full"
               id={`whoobe-jkkr2-${index}`}
             >
-              Läs mer
+             Lägg i kundvagn
             </button>
           </div>
         </div>
