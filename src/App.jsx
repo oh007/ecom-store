@@ -9,7 +9,15 @@ import Checkout from './Checkout';
 import Header from './components/Header';
 
 const App = () => {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(() => {
+    const storedItems = localStorage.getItem('cartItems');
+    return storedItems ? JSON.parse(storedItems) : [];
+  });
+
+  const [cartItemCount, setCartItemCount] = useState(() => {
+    const storedCount = localStorage.getItem('cartItemCount');
+    return storedCount ? parseInt(storedCount, 10) : 0;
+  });
 
   const addToCart = (product) => {
     const newCartItem = {
@@ -19,9 +27,9 @@ const App = () => {
       price: product.price,
       quantity: 1,
     };
-  
+
     const existingCartItemIndex = cartItems.findIndex((item) => item.id === newCartItem.id);
-  
+
     if (existingCartItemIndex !== -1) {
       const updatedCartItems = [...cartItems];
       updatedCartItems[existingCartItemIndex].quantity += 1;
@@ -29,17 +37,26 @@ const App = () => {
     } else {
       setCartItems([...cartItems, newCartItem]);
     }
+
+    // Uppdatera cartItemCount i headern
+    setCartItemCount((prevCount) => prevCount + 1);
   };
-  
+
   // Uppdatera local storage varje gång cartItems ändras
   useEffect(() => {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
   }, [cartItems]);
-  console.log(cartItems,"Kundvagn")
+
+  // Uppdatera local storage varje gång cartItemCount ändras
+  useEffect(() => {
+    localStorage.setItem('cartItemCount', cartItemCount.toString());
+  }, [cartItemCount]);
+  console.log(cartItems, "Kundvagn");
+
   return (
     <Router>
       <div>
-        <Header />
+        <Header cartItemCount={cartItemCount} />
 
         <Routes>
           <Route
@@ -56,7 +73,7 @@ const App = () => {
           />
           <Route
             path="/checkout"
-            element={<Checkout cartItems={cartItems}/>}
+            element={<Checkout cartItems={cartItems} />}
           />
         </Routes>
       </div>
