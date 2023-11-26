@@ -1,18 +1,31 @@
 /* eslint-disable react/prop-types */
-import { data } from "/src/data/data"
+import { useState } from 'react';
+import { data } from "/src/data/data";
+import { Link } from "react-router-dom";
 
 export default function ProdCard(props) {
-  console.log(data)
+  const [addToCartMessage, setAddToCartMessage] = useState('');
+
+  const handleAddToCart = (product) => {
+    props.addToCart(product);
+
+    setAddToCartMessage(`Du har lagt till ${product.title} i kundvagnen`);
+
+    setTimeout(() => {
+      setAddToCartMessage('');
+    }, 5000);
+  };
+
   return (
-    <div className="flex flex-wrap justify-center mt-16">
-      {data.map((data, index) => (
+    <div className="flex flex-wrap justify-center mt-16 relative">
+      {data.map((product, index) => (
         <div
           key={index}
           id={`whoobe-3fery-${index}`}
           className="w-full md:w-64 my-4 md:mx-2 justify-center items-center bg-white shadow-lg rounded-lg flex flex-col "
         >
           <img
-            src={data.img}
+            src={product.img}
             alt="img"
             title="img"
             className="w-full h-[200px] object-cover rounded-t-lg"
@@ -26,15 +39,15 @@ export default function ProdCard(props) {
               className="border-b-2 text-3xl"
               id={`whoobe-3mr7n-${index}`}
             >
-              {data.title}
+              {product.title}
             </h4>
             <p className="my-4" id={`whoobe-950fw-${index}`}>
-              {data.description}
+              {product.description}
             </p>
-            <p className="text-bold">{data.price + " sek"}</p>
+            <p className="text-bold">{product.price + " sek"}</p>
             <button
               value="button"
-              onClick={() => props.addToCart(data)}
+              onClick={() => handleAddToCart(product)}
               className="bg-prodButton hover:bg-gray-500 text-white font-bold py-2 px-4 rounded-full"
               id={`whoobe-jkkr2-${index}`}
             >
@@ -43,6 +56,14 @@ export default function ProdCard(props) {
           </div>
         </div>
       ))}
+    {addToCartMessage && (
+  <div className="fixed top-0 w-full bg-gray-800 text-white p-4 flex items-start justify-between">
+    <span>{addToCartMessage}</span>
+    <Link to="/checkout" className="text-blue-300">
+      Visa
+    </Link>
+  </div>
+)}
     </div>
   );
 }
