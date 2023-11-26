@@ -1,11 +1,12 @@
-import ProductShowCase from "./components/ProductShowCase";
+/* eslint-disable react/prop-types */
+import ProdCard from "./components/ProdCard";
 
 
-const Products = () => {
+const Products = (props) => {
   return (
     <>
     <h1>All products</h1>
-    <ProductShowCase/>
+    <ProdCard  addToCart={props.addToCart} />
     </>
   );
 };
