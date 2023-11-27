@@ -1,0 +1,45 @@
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faTwitter, faInstagram, faLinkedin, faPinterest } from '@fortawesome/free-brands-svg-icons';
+import { faCcVisa, faCcMastercard, faPaypal, faApplePay } from '@fortawesome/free-brands-svg-icons';
+
+export default function Footer() {
+  return (
+    <footer className="footer">
+      <div className='p-8'>
+        <h4 className='font-bold'>Ditt Ikea +</h4>
+      </div>
+      <div className='p-8'>
+        <h4 className='font-bold'>Handla på Ikea +</h4>
+      </div>
+      <div className='p-8'>
+        <h4 className='font-bold'>Kundservice</h4>
+      </div>
+      <div className='p-8'>
+        <h4 className='font-bold'>Detta är Ikea +</h4>
+      </div>
+
+      <div className="social-icons flex flex-row">
+        <ul className='flex flex-row gap-6 m-auto p-8'>
+        <FontAwesomeIcon icon={faFacebook} size='xl' />
+        <FontAwesomeIcon icon={faTwitter} size='xl'/>
+        <FontAwesomeIcon icon={faInstagram} size='xl'/>
+        <FontAwesomeIcon icon={faLinkedin} size='xl'/>
+        <FontAwesomeIcon icon={faPinterest} size='xl' />
+        </ul>
+      </div>
+
+      <div className="payment-icons flex flex-row">
+      <ul className='flex flex-row gap-6 m-auto p-8'>
+      <FontAwesomeIcon icon={faCcVisa} />
+        <FontAwesomeIcon icon={faCcMastercard} />
+        <FontAwesomeIcon icon={faPaypal} />
+        <FontAwesomeIcon icon={faApplePay} />
+        </ul>
+      </div>
+      <div className="copyright">
+       <p className='font-thin'> &copy; Olof-Hag 2023 - This is <strong>NOT</strong> an official site for IKEA, just a prototype site of an e-commerce site</p>
+      </div>
+    </footer>
+  );
+}

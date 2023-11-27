@@ -7,6 +7,7 @@ import Products from './Products';
 import About from './About';
 import Checkout from './Checkout';
 import Header from './components/Header';
+import Footer from './components/Footer.jsx';
 
 const App = () => {
   const [cartItems, setCartItems] = useState(() => {
@@ -76,8 +77,10 @@ const App = () => {
             element={<Checkout cartItems={cartItems} setCartItemCount={setCartItemCount} />}
           />
         </Routes>
+        <Footer></Footer>
       </div>
     </Router>
+
   );
 };
 
