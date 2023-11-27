@@ -17,12 +17,12 @@ export default function ProdCard(props) {
   };
 
   return (
-    <div className="flex flex-wrap justify-center mt-16 relative">
+    <div className="flex flex-wrap justify-center mt-4 relative">
       {data.map((product, index) => (
         <div
           key={index}
           id={`whoobe-3fery-${index}`}
-          className="w-full md:w-64 my-4 md:mx-2 justify-center items-center bg-white shadow-lg rounded-lg flex flex-col "
+          className="w-full md:w-64 my-4 md:mx-2 justify-center items-center border border-slate-200 bg-white rounded-lg flex flex-col"
         >
           <img
             src={product.img}
@@ -44,7 +44,7 @@ export default function ProdCard(props) {
             <p className="my-4" id={`whoobe-950fw-${index}`}>
               {product.description}
             </p>
-            <p className="text-bold">{product.price + " sek"}</p>
+            <h4 className="font-bold text-xl">{product.price + ":-"}</h4>
             <button
               value="button"
               onClick={() => handleAddToCart(product)}

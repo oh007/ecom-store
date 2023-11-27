@@ -1,5 +1,3 @@
-// App.jsx
-
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home';
@@ -8,6 +6,8 @@ import About from './About';
 import Checkout from './Checkout';
 import Header from './components/Header';
 import Footer from './components/Footer.jsx';
+import SearchBar from "./components/Searchbar.jsx";
+import { data } from "/src/data/data";
 
 const App = () => {
   const [cartItems, setCartItems] = useState(() => {
@@ -39,16 +39,13 @@ const App = () => {
       setCartItems([...cartItems, newCartItem]);
     }
 
-    // Uppdatera cartItemCount i headern
     setCartItemCount((prevCount) => prevCount + 1);
   };
 
-  // Uppdatera local storage varje gång cartItems ändras
   useEffect(() => {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
   }, [cartItems]);
 
-  // Uppdatera local storage varje gång cartItemCount ändras
   useEffect(() => {
     localStorage.setItem('cartItemCount', cartItemCount.toString());
   }, [cartItemCount]);
@@ -58,7 +55,7 @@ const App = () => {
     <Router>
       <div>
         <Header cartItemCount={cartItemCount} />
-
+      <SearchBar></SearchBar>
         <Routes>
           <Route
             path="/"
@@ -66,7 +63,7 @@ const App = () => {
           />
           <Route
             path="/products"
-            element={<Products cartItems={cartItems} addToCart={addToCart} />}
+            element={<Products data={data} cartItems={cartItems} addToCart={addToCart} />}
           />
           <Route
             path="/about"
