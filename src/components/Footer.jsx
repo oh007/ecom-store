@@ -1,4 +1,3 @@
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram, faLinkedin, faPinterest } from '@fortawesome/free-brands-svg-icons';
 import { faCcVisa, faCcMastercard, faPaypal, faApplePay } from '@fortawesome/free-brands-svg-icons';
