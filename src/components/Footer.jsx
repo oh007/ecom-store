@@ -31,14 +31,14 @@ export default function Footer() {
 
       <div className="payment-icons flex flex-row">
       <ul className='flex flex-row gap-6 m-auto p-8'>
-      <FontAwesomeIcon icon={faCcVisa} />
-        <FontAwesomeIcon icon={faCcMastercard} />
-        <FontAwesomeIcon icon={faPaypal} />
-        <FontAwesomeIcon icon={faApplePay} />
+      <FontAwesomeIcon icon={faCcVisa} size='lg'/>
+        <FontAwesomeIcon icon={faCcMastercard} size='lg'/>
+        <FontAwesomeIcon icon={faPaypal} size='lg'/>
+        <FontAwesomeIcon icon={faApplePay} size='lg'/>
         </ul>
       </div>
       <div className="copyright">
-       <p className='font-thin'> &copy; Olof-Hag 2023 - This is <strong>NOT</strong> an official site for IKEA, just a prototype site of an e-commerce site</p>
+       <p className='font-thin text-center'> &copy; Olof-Hag 2023 - This is <strong>NOT</strong> an official site for IKEA, just a prototype site of an e-commerce site</p>
       </div>
     </footer>
   );
