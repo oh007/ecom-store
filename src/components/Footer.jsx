@@ -6,16 +6,16 @@ import { faCcVisa, faCcMastercard, faPaypal, faApplePay } from '@fortawesome/fre
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className='p-8'>
+   <div className='p-8 border-b border-gray-200 w-4/5 m-auto'>
         <h4 className='font-bold'>Ditt Ikea +</h4>
       </div>
-      <div className='p-8'>
+      <div className='p-8 border-b border-gray-200 w-4/5 m-auto'>
         <h4 className='font-bold'>Handla på Ikea +</h4>
       </div>
-      <div className='p-8'>
+      <div className='p-8 border-b border-gray-200 w-4/5 m-auto'>
         <h4 className='font-bold'>Kundservice</h4>
       </div>
-      <div className='p-8'>
+      <div className='p-8 border-b border-gray-200 w-4/5 m-auto'>
         <h4 className='font-bold'>Detta är Ikea +</h4>
       </div>
 
