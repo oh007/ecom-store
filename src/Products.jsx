@@ -38,7 +38,7 @@ const Products = (props) => {
           Färg
         </button>
       </div>
-      <ProdCard addToCart={props.addToCart} />
+      <ProdCard data={props.data} addToCart={props.addToCart} />
     </>
   );
 };
