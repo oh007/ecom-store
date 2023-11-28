@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
-import { data } from "/src/data/data";
 import { Link } from "react-router-dom";
 
 export default function ProdCard(props) {
@@ -18,7 +17,7 @@ export default function ProdCard(props) {
 
   return (
     <div className="flex flex-wrap justify-center mt-4 relative">
-      {data.map((product, index) => (
+      {props.data.map((product, index) => (
         <div
           key={index}
           id={`whoobe-3fery-${index}`}

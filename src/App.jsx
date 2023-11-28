@@ -7,7 +7,7 @@ import Checkout from './Checkout';
 import Header from './components/Header';
 import Footer from './components/Footer.jsx';
 import SearchBar from "./components/Searchbar.jsx";
-import { data } from "/src/data/data";
+import { data , imageData } from "/src/data/data";
 
 const App = () => {
   const [cartItems, setCartItems] = useState(() => {
@@ -59,7 +59,7 @@ const App = () => {
         <Routes>
           <Route
             path="/"
-            element={<Home cartItems={cartItems} addToCart={addToCart} />}
+            element={<Home cartItems={cartItems} addToCart={addToCart} imageData={imageData} data={data} />}
           />
           <Route
             path="/products"
