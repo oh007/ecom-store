@@ -10,6 +10,7 @@ import SearchBar from "./components/Searchbar.jsx";
 import { data , imageData } from "/src/data/data";
 
 const App = () => {
+ 
   const [cartItems, setCartItems] = useState(() => {
     const storedItems = localStorage.getItem('cartItems');
     return storedItems ? JSON.parse(storedItems) : [];
@@ -55,7 +56,7 @@ const App = () => {
     <Router>
       <div>
         <Header cartItemCount={cartItemCount} />
-      <SearchBar></SearchBar>
+      <SearchBar data={data} />
         <Routes>
           <Route
             path="/"
